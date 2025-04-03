@@ -24,7 +24,7 @@ L’application est composée de plusieurs microservices indépendants :
 - **Gestion des Utilisateurs** (Habib) → MySQL  
 - **Gestion des Projets** (Hamza) → H2  
 - **Gestion des Tâches** (Firdaous) → H2  
-- **Gestion des Jalons ** (Melek) → MySQL  
+- **Gestion des Jalons** (Melek) → MySQL  
 - **Gestion des Fichiers** (Nada) → MySQL  
 
 ### 🔹 Microservice d'Équipe  
