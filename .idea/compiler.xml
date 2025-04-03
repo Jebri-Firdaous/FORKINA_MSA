@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="userManagement" />
+        <module name="serviceProjecthamzaMbarki" />
+        <module name="Eureka" />
+        <module name="MicroserviceMilestone" />
+        <module name="Gateway" />
+      </profile>
+      <profile name="Annotation profile for taskManagement" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="taskManagement" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="usermicroservice" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Eureka" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
+      <module name="MicroserviceMilestone" options="-parameters" />
+      <module name="serviceProjecthamzaMbarki" options="-parameters" />
+      <module name="taskManagement" options="-parameters" />
+      <module name="userManagement" options="-parameters" />
+      <module name="usermicroservice" options="-parameters" />
+    </option>
+  </component>
+</project>

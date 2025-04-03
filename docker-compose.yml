@@ -1,0 +1,130 @@
+services:
+  eureka:
+    image: doussa1993/mini-project-microservice-eureka:latest
+    container_name: eureka
+    ports:
+      - "8761:8761"
+    environment:
+      - spring.application.name=eureka
+      - server.port=8761
+      - eureka.client.register-with-eureka=false
+      - eureka.client.fetch-registry=false
+    networks:
+      - my-network
+
+  gateway:
+    image: doussa1993/mini-project-microservice-gateway:latest
+    container_name: apigateway
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka
+    environment:
+      - spring.application.name=GATEWAY
+      - server.port=8082
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    networks:
+      - my-network
+
+  milestone-management:
+    image: doussa1993/mini-project-microservice-milestone:latest
+    container_name: milestonecontainer
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka
+      - mysql
+    command: ["sh", "-c", "dockerize -wait tcp://mysql:3306 -timeout 30s && java -jar /app.jar"]
+    environment:
+      - spring.application.name=MILESTONE-MANAGEMENT
+      - server.port=8085
+      - spring.datasource.url=jdbc:mysql://mysql:3306/milestoneDB?createDatabaseIfNotExist=true
+      - spring.datasource.username=root
+      - spring.datasource.password=
+      - spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    networks:
+      - my-network
+
+  project-management:
+    image: doussa1993/mini-project-microservice-project:latest
+    container_name: projectcontainer
+    ports:
+      - "8084:8084"
+    depends_on:
+      - eureka
+    environment:
+      - spring.application.name=PROJECT-MANAGEMENT
+      - server.port=8084
+      - spring.datasource.url=jdbc:h2:mem:projectDB;DB_CLOSE_ON_EXIT=FALSE
+      - spring.datasource.username=sa
+      - spring.datasource.password=
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+
+    networks:
+      - my-network
+
+  task-management:
+    image: doussa1993/mini-project-microservice-task:latest
+    container_name: taskcontainer
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka
+    environment:
+      - spring.application.name=TASK-MANAGEMENT
+      - server.port=8081
+      - spring.datasource.url=jdbc:h2:mem:taskDB;DB_CLOSE_ON_EXIT=FALSE
+      - spring.datasource.username=sa
+      - spring.datasource.password=
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+
+    networks:
+      - my-network
+
+  user-management:
+    image: doussa1993/mini-project-microservice-user:latest
+    container_name: usercontainer
+    ports:
+      - "8086:8086"
+    depends_on:
+      - eureka
+      - mysql
+    command: ["sh", "-c", "dockerize -wait tcp://mysql:3306 -timeout 30s && java -jar /app.jar"]
+    environment:
+      - spring.application.name=USER-MANAGEMENT
+      - server.port=8086
+      - spring.datasource.url=jdbc:mysql://mysql:3306/UserDB?createDatabaseIfNotExist=true&useSSL=false&max_allowed_packet=15728640
+      - spring.datasource.username=root
+      - spring.datasource.password=
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    networks:
+      - my-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=UserDB
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0.2
+    ports:
+      - "9090:9090"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME: localhost
+    networks:
+      - my-network
+    command: ["start-dev"]
+
+
+networks:
+  my-network:
+    driver: bridge
