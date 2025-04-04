@@ -3,8 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/MicroserviceMilestone/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/serviceProjecthamzaMbarki/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fileManagement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milestoneManagement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/projectManagement/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taskManagement/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userManagement/src/main/java" charset="UTF-8" />
   </component>

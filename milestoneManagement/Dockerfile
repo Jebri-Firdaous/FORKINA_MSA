@@ -5,7 +5,7 @@ FROM openjdk:17
 EXPOSE 8085
 
 # Copier le fichier .jar dans l'image
-ADD target/MicroserviceMilestone-0.0.1-SNAPSHOT.jar milestonemicroservice.jar
+ADD target/milestoneManagement-0.0.1-SNAPSHOT.jar milestonemicroservice.jar
 
 # Définir le point d’entrée pour exécuter l’application
 ENTRYPOINT ["java", "-jar", "milestonemicroservice.jar"]

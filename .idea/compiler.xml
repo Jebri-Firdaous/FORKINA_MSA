@@ -7,32 +7,37 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="projectManagement" />
         <module name="userManagement" />
-        <module name="serviceProjecthamzaMbarki" />
         <module name="Eureka" />
-        <module name="MicroserviceMilestone" />
         <module name="Gateway" />
       </profile>
-      <profile name="Annotation profile for taskManagement" enabled="true">
+      <profile name="Annotation profile for mini-project" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="FileManagement" />
+        <module name="milestoneManagement" />
         <module name="taskManagement" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="fileManagement" target="17" />
+      <module name="FORKINA_MSA" target="1.5" />
       <module name="usermicroservice" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Eureka" options="-parameters" />
+      <module name="FileManagement" options="-parameters" />
       <module name="Gateway" options="-parameters" />
-      <module name="MicroserviceMilestone" options="-parameters" />
-      <module name="serviceProjecthamzaMbarki" options="-parameters" />
+      <module name="fileManagement" options="-parameters" />
+      <module name="milestoneManagement" options="-parameters" />
+      <module name="projectManagement" options="-parameters" />
       <module name="taskManagement" options="-parameters" />
       <module name="userManagement" options="-parameters" />
       <module name="usermicroservice" options="-parameters" />

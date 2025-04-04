@@ -25,6 +25,8 @@ public class GatewayApplication {
                         .uri("lb://MILESTONE-MANAGEMENT"))
                 .route("PROJECT-MANAGEMENT", r -> r.path("/projects/**")
                         .uri("lb://PROJECT-MANAGEMENT"))
+                .route("FILE-MANAGEMENT", r -> r.path("/files/**")
+                        .uri("lb://FILE-MANAGEMENT"))
                 .build();
     }
 }
