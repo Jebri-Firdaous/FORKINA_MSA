@@ -19,8 +19,8 @@ public class FileController {
 
     @Autowired
     private FileService fileService;
-    @GetMapping("/")
-    public String home() {
+    @GetMapping
+    public String healthCheck() {
         return "File Management Microservice is running!";
     }
 

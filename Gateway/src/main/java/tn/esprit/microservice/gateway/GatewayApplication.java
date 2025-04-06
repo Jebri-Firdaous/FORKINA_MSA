@@ -19,7 +19,7 @@ public class GatewayApplication {
         return builder.routes()
                 .route("TASK-MANAGEMENT", r -> r.path("/tasks/**")
                         .uri("lb://TASK-MANAGEMENT"))
-                .route("USER-MANAGEMENT", r -> r.path("/Users/**")
+                .route("USER-MANAGEMENT", r -> r.path("/users/**")
                         .uri("lb://USER-MANAGEMENT"))
                 .route("MILESTONE-MANAGEMENT", r -> r.path("/milestones/**")
                         .uri("lb://MILESTONE-MANAGEMENT"))
