@@ -5,6 +5,8 @@ import lombok.Getter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -13,11 +15,15 @@ public class Task  implements Serializable {
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idTask;
+    private Integer id;
     private String taskName;
     private String description;
     @Enumerated(EnumType.STRING)
     private Status status;
+    @ElementCollection
+    @CollectionTable(name = "task_history", joinColumns = @JoinColumn(name = "task_id"))
+    @Column(name = "history_entry")
+    private List<String> history = new ArrayList<>();
 
 private LocalDateTime dueDate;
 public  Task (String nom, String desc, Status status,LocalDateTime ddl)
@@ -33,8 +39,8 @@ this.status= status;
 
     }
     // Getters
-    public Integer getIdTask() {
-        return idTask;
+    public Integer getId() {
+        return id;
     }
 
     public String getTaskName() {
@@ -52,10 +58,12 @@ this.status= status;
     public LocalDateTime getDueDate() {
         return dueDate;
     }
-
+    public List<String> getHistory() {
+        return history;
+    }
     // Setters
-    public void setIdTask(Integer idTask) {
-        this.idTask = idTask;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setTaskName(String taskName) {
@@ -73,5 +81,7 @@ this.status= status;
     public void setDueDate(LocalDateTime dueDate) {
         this.dueDate = dueDate;
     }
-
+    public void setHistory(List<String> history) {
+        this.history = history;
+    }
 }
