@@ -20,6 +20,10 @@ public class User {
     private String email;
 
     private String password;
+        
+    private boolean verified = false;
+    
+    private String verificationToken;
 
     public User() {
     }
@@ -69,5 +73,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
+    }
+
+    public String getVerificationToken() {
+        return verificationToken;
+    }
+
+    public void setVerificationToken(String verificationToken) {
+        this.verificationToken = verificationToken;
     }
 }

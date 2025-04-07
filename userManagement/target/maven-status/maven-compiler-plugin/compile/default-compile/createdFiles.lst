@@ -1,0 +1,6 @@
+tn\esprit\microservice\usermanagement\UserRestAPI.class
+tn\esprit\microservice\usermanagement\UserRepository.class
+tn\esprit\microservice\usermanagement\EmailService.class
+tn\esprit\microservice\usermanagement\UserManagementApplication.class
+tn\esprit\microservice\usermanagement\UserService.class
+tn\esprit\microservice\usermanagement\User.class
