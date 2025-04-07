@@ -1,0 +1,5 @@
+com\example\microservicemilestone\repository\MilestoneRepository.class
+com\example\microservicemilestone\service\MilestoneService.class
+com\example\microservicemilestone\controller\MilestoneController.class
+com\example\microservicemilestone\model\Milestone.class
+com\example\microservicemilestone\MicroserviceMilestoneApplication.class
