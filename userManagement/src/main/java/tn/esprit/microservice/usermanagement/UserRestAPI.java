@@ -69,12 +69,6 @@ public class UserRestAPI {
         return new ResponseEntity<>(response, status);
     }
 
-    @GetMapping("/verify")
-    public ResponseEntity<String> verifyEmail(@RequestParam String token) {
-        String result = userService.verifyEmail(token);
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
-
     @PutMapping(value = "/update/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<User> updateUser(@PathVariable(value = "id") int id,
