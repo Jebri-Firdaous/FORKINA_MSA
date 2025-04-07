@@ -120,7 +120,7 @@ services:
     command: ["sh", "-c", "dockerize -wait tcp://mysql:3306 -timeout 30s && java -jar /app.jar"]
     environment:
       - spring.application.name=FILE-MANAGEMENT
-      - server.port=8085
+      - server.port=8087
       - spring.datasource.url=jdbc:mysql://mysql:3306/fileDB?createDatabaseIfNotExist=true
       - spring.datasource.username=root
       - spring.datasource.password=
