@@ -1,33 +1,40 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+# Ignore Maven target folder
+/target/
 .project
-.settings
+.classpath
+.settings/
+.factorypath
+
+# Ignore wrapper jar except the wrapper script directory
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore generated build output
+/build/
+!.gitkeep
+
+# Ignore database file
+projectDB.mv.db
+
+# STS specific
+.apt_generated
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
+# IntelliJ
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# VS Code
 .vscode/
+
+# Optional: Ignore HELP.md (uncomment if you want to ignore it)
+# /HELP.md
