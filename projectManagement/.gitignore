@@ -1,0 +1,40 @@
+# Ignore Maven target folder
+/target/
+.project
+.classpath
+.settings/
+.factorypath
+
+# Ignore wrapper jar except the wrapper script directory
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore generated build output
+/build/
+!.gitkeep
+
+# Ignore database file
+projectDB.mv.db
+
+# STS specific
+.apt_generated
+.springBeans
+.sts4-cache
+
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Optional: Ignore HELP.md (uncomment if you want to ignore it)
+# /HELP.md
