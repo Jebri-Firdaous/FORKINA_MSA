@@ -1,0 +1,6 @@
+tn\esprit\taskmanagement\TaskRepository.class
+tn\esprit\taskmanagement\Task.class
+tn\esprit\taskmanagement\TaskService.class
+tn\esprit\taskmanagement\TaskManagementApplication.class
+tn\esprit\taskmanagement\Status.class
+tn\esprit\taskmanagement\TaskRestAPI.class
