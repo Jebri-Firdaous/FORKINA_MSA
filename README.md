@@ -29,7 +29,9 @@ L’application est composée de plusieurs microservices indépendants :
 
 ### 🔹 Microservice d'Équipe  
 
-- **Gestion du Chat** → Communication et collaboration  
+- **Gestion du Chat en Temps Réel**
+  → Développé avec Node.js et WebSocket pour une communication instantanée.
+  Utilise MongoDB pour stocker l’historique des messages et les métadonnées des conversations.
 
 Tous les services sont orchestrés via **Eureka Discovery Server** et sécurisés par une **API Gateway**.  
 
